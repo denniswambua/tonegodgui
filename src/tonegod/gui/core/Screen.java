@@ -959,11 +959,11 @@ public class Screen implements ElementManager, Control, RawInputListener {
 								((MouseButtonListener)eventElement).onMouseLeftPressed(evt);
 							}
 							if (keyboardElement == null)
-								if (Screen.isAndroid()) hideVirtualKeyboard();
+								//if (Screen.isAndroid()) hideVirtualKeyboard();
 							evt.setConsumed();
 						} else {
-							if (keyboardElement == null)
-								if (Screen.isAndroid()) hideVirtualKeyboard();
+							//if (keyboardElement == null)
+								//if (Screen.isAndroid()) hideVirtualKeyboard();
 						}
 
 						// 2D Framework
@@ -1263,7 +1263,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 				((TouchListener)target).onTouchDown(evt);
 			}
 			if (keyboardElement == null)
-				hideVirtualKeyboard();
+				//hideVirtualKeyboard();
 			evt.setConsumed();
 			contactElements.put(evt.getPointerId(),contact);
 			elementOffsets.put(evt.getPointerId(),offset);
@@ -1282,7 +1282,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 				}
 			}
 			if (keyboardElement == null)
-				hideVirtualKeyboard();
+				//hideVirtualKeyboard();
 			resetTabFocusElement();
 		}
 		
@@ -2168,7 +2168,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 			initModalBackground();
 			addElement(modalBackground, true);
 		//	t0neg0dGUI.attachChild(modalBackground);
-			if (isAndroid()) initVirtualKeys();
+			//if (isAndroid()) initVirtualKeys();
 		}
 	}
 	
