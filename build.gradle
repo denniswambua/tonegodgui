@@ -5,27 +5,27 @@ apply plugin: "idea"
 apply plugin: 'maven'
 
 
-version = '0.0.2'
+version = '0.0.3'
 ext {
 	appName = 'tonegodgui'
-        jme_group = 'com.github.jMonkeyEngine.jmonkeyengine'
-	jmonkeyengine_version = 'c5c893f' // 3.1-alpha1
+        jme_group = 'org.jmonkeyengine'
+	jmonkeyengine_version = '3.1.0-beta1'
 }
 sourceCompatibility = 1.7
 
 repositories {
-//	mavenLocal()
-	mavenCentral()
-//	maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-//	maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-//	maven { url 'http://updates.jmonkeyengine.org/maven' }
+	mavenLocal()
+	jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+        maven { url 'http://updates.jmonkeyengine.org/maven' }
 	maven { url "https://jitpack.io" }
 }
 
-//mainClassName = 'app.MainRTS'
-//if (!hasProperty('mainClass')) {
-//	ext.mainClass = 'app.MainRTS'
-//}
+mainClassName = 'app.MainRTS'
+if (!hasProperty('mainClass')) {
+	ext.mainClass = 'app.MainRTS'
+}
 
 dependencies {
 	compile fileTree(dir: 'lib', include: ['*.jar'])
